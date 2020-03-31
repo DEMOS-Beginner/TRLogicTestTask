@@ -5,7 +5,7 @@
 	* Главный файл сайта (можно назвать FRONT CONTROLLER)
 	*
 	*/
-
+	session_start();
 
 	//Подключение необходимых компонентов
 	require_once '../components/Router.php';

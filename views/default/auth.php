@@ -4,7 +4,7 @@
 	</div>
 	<div class="row justify-content-center">
 		<div class="col-md-6">
-			<form action="login" method='POST'>
+			<form action="/auth/auth" method='POST'>
 				<div class="form-group">
 					<label for="name">Введите email</label>
 					<input type="text" name='email' class='form-control' placeholder="Email">

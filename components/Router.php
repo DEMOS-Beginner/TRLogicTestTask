@@ -18,6 +18,7 @@
 		*/
 		private $controllerName;
 
+
 		/**
 		* Имя метода в контроллере
 		*/
@@ -32,7 +33,7 @@
 		public function __construct($controllerName, $actionName)
 		{
 			$this->controllerName = $controllerName.CONTROLLER_NAME_POSTFIX;
-			$this->actionName= $actionName.ACTION_NAME_POSTFIX;
+			$this->actionName = $actionName.ACTION_NAME_POSTFIX;
 		}
 
 

@@ -36,6 +36,7 @@
 	/**
 	* Перенаправляет на страницу с введёнными url
 	* @param string $url - URL
+	* @param array $errors - возможные ошибки
 	*/
 
 	function redirect($url)
@@ -43,6 +44,7 @@
 		if (!$url) $url = '/';
 		header("Location: $url");
 		exit;
+
 	}
 
 
