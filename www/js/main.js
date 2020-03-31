@@ -61,10 +61,7 @@ function login()
 			} else {
 				location.href = '/user';
 			}
-		},
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
+		}
 	});
 }
 
@@ -74,4 +71,30 @@ function login()
 function closeMessage(blockId)
 {
 	$(blockId).hide();
+}
+
+/**
+* Устанавливает указанный язык
+*/
+function setLang(nowLang)
+{
+	let lang = '';
+	if (nowLang == 'ru') {
+		lang = 'en';
+	} else {
+		lang = 'ru';
+	}
+
+	data = {lang: lang};
+
+	$.ajax({
+		type: 'POST',
+		data: data,
+		dataType: 'json',
+		url: '/index/setlang',
+		async: true,
+		success: function(data) {
+			location.reload();
+		}
+	});	
 }

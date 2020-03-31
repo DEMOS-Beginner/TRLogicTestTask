@@ -21,11 +21,11 @@
 			extract($_POST); //Распаковываем для удобства
 
 			if (!$password) {
-				$result['message'] =  "Введите пароль";
+				$result['message'] =  ENTER_PASSWORD;
 			}
 
 			if (!$email) {
-				$result['message'] =  "Введите Email";
+				$result['message'] =  ENTER_EMAIL;
 			}
 
 			//Если возникла какая-то проблема, значит не все данные заполнены.

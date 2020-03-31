@@ -19,29 +19,33 @@
 			$result = [];
 			extract($_POST); //Распаковываем для удобства
 
+			if (!$about) {
+				$result['message'] =  YOURSELF_INFORMATION;
+			}
+
 			//Этот код можно улучшить
 			if (strlen($password) < 6) {
-				$result['message'] = "Длина пароля должна быть больше 6 символов";
+				$result['message'] = PASSWORD_MIN_LENGTH;
 			}
 
 			if ($password !== $password2) {
-				$result['message'] =  "Пароли не совпадают";				
+				$result['message'] =  PASSWORD_MISMATCH;				
 			}
 
 			if (!$password2) {
-				$result['message'] =  "Введите повтор пароля";
+				$result['message'] =  ENTER_REPEAT_PASSWORD;
 			}
 
 			if (!$password) {
-				$result['message'] =  "Введите пароль";
+				$result['message'] =  ENTER_PASSWORD;
 			}
 
 			if (!$email) {
-				$result['message'] =  "Введите Email";
+				$result['message'] =  ENTER_EMAIL;
 			}
 
 			if (!$name) {
-				$result['message'] =  "Введите ФИО";
+				$result['message'] = ENTER_NAME;
 			}
 
 			//Если возникла какая-то проблема, значит не все данные заполнены.

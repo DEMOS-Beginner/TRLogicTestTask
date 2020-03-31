@@ -50,6 +50,7 @@
 			$userName = filter_var(trim($_POST['name']), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 			$userEmail = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
 			$userPassword = md5($_POST['password']);
+			$aboutUser = filter_var(trim($_POST['about']), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 			//Если пользователь с таким Email существует, то вызываем ошибку.
 			$model = new UsersModel;
@@ -61,7 +62,7 @@
 			}
 
 			//Если пользователь успешно зарегистрирован, то кладём его данные в сессию.
-			$userData = $model->registerNewUser($userName, $userEmail, $userPassword);
+			$userData = $model->registerNewUser($userName, $userEmail, $userPassword, $aboutUser);
 			if ($userData) {
 				$_SESSION['userData'] = $userData;
 				$resData['success'] = 1;

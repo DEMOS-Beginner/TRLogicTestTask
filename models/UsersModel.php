@@ -49,15 +49,16 @@
 		* @param string $userPassword
 		* @return array $userData
 		*/
-		public function registerNewUser($userName, $userEmail, $userPassword)
+		public function registerNewUser($userName, $userEmail, $userPassword, $aboutUser)
 		{
 			//Вставляем данные пользователя в таблицу пользователей
-			$sql = 'INSERT INTO users (name, email, password) VALUES (:name, :email, :password)';
+			$sql = 'INSERT INTO users (name, email, password, about) VALUES (:name, :email, :password, :about)';
 			$query = $this->db->prepare($sql);
 			$result = $query->execute([
 				'name'     => $userName,
 				'email'    => $userEmail,
 				'password' => $userPassword,
+				'about'    => $aboutUser,
 			]);
 
 			//Если пользователь успешно зарегистрировался, то сразу логиним его
