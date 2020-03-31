@@ -60,15 +60,9 @@
 				'password' => $userPassword,
 			]);
 
-			//Если пользователь зарегистрирован, то возвращаем его данные, чтобы поместить их в сессию
+			//Если пользователь успешно зарегистрировался, то сразу логиним его
 			if ($result) {
-				$sql = 'SELECT * FROM users WHERE email = :email AND password = :password LIMIT 1';
-				$query = $this->db->prepare($sql);
-				$userData = $query->execute([
-					'email'    => $userEmail,
-					'password' => $userPassword,
-				]);			
-
+				$userData = $this->loginUser($userEmail, $userPassword);
 				return $userData;
 			} 
 
@@ -76,4 +70,22 @@
 		}
 
 
+		/**
+		* Находит в базе данных пользователя с указанным паролем и email
+		* @param string $email
+		* @param string $password
+		* @return array $userData
+		*/
+		public function loginUser($email, $password)
+		{
+			$sql = 'SELECT * FROM users WHERE email = :email AND password = :password LIMIT 1';
+			$query = $this->db->prepare($sql);
+			$query->execute([
+				'email'    => $email,
+				'password' => $password,
+			]);
+			$userData = $query->fetch();
+
+			return $userData;
+		}
 	}

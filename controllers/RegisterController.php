@@ -18,6 +18,10 @@
 		*/
 		public function indexAction()
 		{
+			if (isset($_SESSION['userData'])) {
+				redirect('/user');
+			}
+
 			$this->loadTemplate('header');
 			$this->loadTemplate('register');
 			$this->loadTemplate('footer');
@@ -33,7 +37,7 @@
 
 			//Проверяет все поля на заполнение
 			$request = new RegisterRequest;
-			$resData = $request->checkRegisterParams();
+			$resData = $request->checkParams();
 
 			//Если не все поля заполнены, то вызываем ошибку.
 			if (!$resData['success']) {

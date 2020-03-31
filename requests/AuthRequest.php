@@ -2,35 +2,23 @@
 	
 	/**
 	*
-	* Request для RegisterController@register
+	* Request для AuthController@auth
 	*
 	*/
 
 	require_once 'Request.php';
 
-	class RegisterRequest extends Request
+	class AuthRequest extends Request
 	{
 
 		/**
-		* Проверяет регистрационные поля на заполненность
+		* Проверяет поля авторизации на заполненность
+		* @return array
 		*/
 		public function checkParams()
 		{
 			$result = [];
 			extract($_POST); //Распаковываем для удобства
-
-			//Этот код можно улучшить
-			if (strlen($password) < 6) {
-				$result['message'] = "Длина пароля должна быть больше 6 символов";
-			}
-
-			if ($password !== $password2) {
-				$result['message'] =  "Пароли не совпадают";				
-			}
-
-			if (!$password2) {
-				$result['message'] =  "Введите повтор пароля";
-			}
 
 			if (!$password) {
 				$result['message'] =  "Введите пароль";
@@ -38,10 +26,6 @@
 
 			if (!$email) {
 				$result['message'] =  "Введите Email";
-			}
-
-			if (!$name) {
-				$result['message'] =  "Введите ФИО";
 			}
 
 			//Если возникла какая-то проблема, значит не все данные заполнены.

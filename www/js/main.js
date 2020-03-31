@@ -42,6 +42,33 @@ function register()
 }
 
 /**
+* Посылает AJAX запрос в AuthController для авторизации пользователя
+*/
+function login()
+{
+	formData = getData('#authData');
+
+	$.ajax({
+		type: 'POST',
+		data: formData,
+		dataType: 'json',
+		url: '/auth/auth',
+		async: true,
+		success: function(data) {
+			if (!data['success']) {
+				$('#authErrors').show();
+				$('#errorText').html(data['message']);
+			} else {
+				location.href = '/user';
+			}
+		},
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+	});
+}
+
+/**
 * Скрывает сообщение с id = blockId
 */
 function closeMessage(blockId)
