@@ -31,17 +31,22 @@
 					</div>
 
 					<div class="form-group">
+						<label for="city" class='form_label'> <?=ENTER_CITY?> </label>
+						<input type="text" name='city' class='form-control' placeholder="<?=CITY_PLACEHOLDER?>">
+					</div>		
+
+					<div class="form-group">
 						<label for="password" class='form_label'> <?=ENTER_PASSWORD?> </label>
 						<input type="password" name='password' class='form-control' placeholder="<?=PASSWORD_PLACEHOLDER?>">
 					</div>
 
 					<div class="form-group">
-						<label for="password2" class='form_label'> <?=ENTER_REPEAT_PASSWORD?> </label>
+						<label for="password2" class='form_label'> <?=ENTER_PASSWORD2?> </label>
 						<input type="password" name='password2' class='form-control' placeholder="<?=PASSWORD_PLACEHOLDER?>">
 					</div>
 
 					<div class="form-group">
-						<label for="about" class='form_label'> <?=YOURSELF_INFORMATION?> </label>
+						<label for="about" class='form_label'> <?=ENTER_ABOUT?> </label>
 						<textarea name='about' class='form-control' placeholder="<?=ABOUTME_PLACEHOLDER?>"></textarea>
 					</div>
 

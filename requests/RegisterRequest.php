@@ -12,19 +12,14 @@
 	{
 
 		/**
-		* Проверяет регистрационные поля на заполненность
+		* Проверяет регистрационные поля на корректную заполненность
 		*/
 		public function checkParams()
 		{
 			$result = [];
-			extract($_POST); //Распаковываем для удобства
+			extract($this->data); //Распаковываем для удобства
 
-			if (!$about) {
-				$result['message'] =  YOURSELF_INFORMATION;
-			}
-
-			//Этот код можно улучшить
-			if (strlen($password) < 6) {
+			if (mb_strlen($password) < 6) {
 				$result['message'] = PASSWORD_MIN_LENGTH;
 			}
 
@@ -32,23 +27,14 @@
 				$result['message'] =  PASSWORD_MISMATCH;				
 			}
 
-			if (!$password2) {
-				$result['message'] =  ENTER_REPEAT_PASSWORD;
+			//Проходит по полям, если поле не заполнено, то вызывает соответствующую константу
+			foreach(array_reverse($this->data) as $key => $value) {
+				if (!$value) {
+					$result['message'] = constant('ENTER_'.strtoupper($key));
+				}
 			}
 
-			if (!$password) {
-				$result['message'] =  ENTER_PASSWORD;
-			}
-
-			if (!$email) {
-				$result['message'] =  ENTER_EMAIL;
-			}
-
-			if (!$name) {
-				$result['message'] = ENTER_NAME;
-			}
-
-			//Если возникла какая-то проблема, значит не все данные заполнены.
+			//Если возникла какая-то проблема, значит не все поля корректно заполнены.
 			if ($result['message']) {
 				$result['success'] = 0;
 				return $result;

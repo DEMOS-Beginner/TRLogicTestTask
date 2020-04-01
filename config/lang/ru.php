@@ -17,12 +17,16 @@
 	define(ENTER_NAME, 'Введите ваше ФИО');
 	define(ENTER_EMAIL, 'Введите Email');
 	define(ENTER_PASSWORD, 'Введите пароль');
-	define(ENTER_REPEAT_PASSWORD, 'Введите повторный пароль');	
+	define(ENTER_PASSWORD2, 'Введите повторный пароль');	
+	define(ENTER_CITY, 'Введите ваш город');	
 	define(PASSWORD_MISMATCH, 'Пароли не совпадают');
 	define(PASSWORD_MIN_LENGTH, 'Длина пароля должна быть больше 6 символов');
-	define(YOURSELF_INFORMATION, 'Заполните информацию о себе');
+	define(ENTER_ABOUT, 'Заполните информацию о себе');
 	define(NAME_PLACEHOLDER, 'Фамилия Имя Отчество');
 	define(EMAIL_PLACEHOLDER, 'Email');
+	define(CITY_PLACEHOLDER, 'Город');
 	define(PASSWORD_PLACEHOLDER, 'Пароль');
 	define(ABOUTME_PLACEHOLDER, 'О себе');
 	define(YOUR_PROFILE, 'Ваш профиль');
+	define(NOT_EMAIL, 'Некорректный Email. Обычно email содержит символ @');
+	define(IMAGE_UPLOAD, 'Загрузить фото');

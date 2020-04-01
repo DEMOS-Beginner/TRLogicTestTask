@@ -49,14 +49,15 @@
 		* @param string $userPassword
 		* @return array $userData
 		*/
-		public function registerNewUser($userName, $userEmail, $userPassword, $aboutUser)
+		public function registerNewUser($userName, $userEmail, $userCity, $userPassword, $aboutUser)
 		{
 			//Вставляем данные пользователя в таблицу пользователей
-			$sql = 'INSERT INTO users (name, email, password, about) VALUES (:name, :email, :password, :about)';
+			$sql = 'INSERT INTO users (name, email, city, password, about) VALUES (:name, :email, :city, :password, :about)';
 			$query = $this->db->prepare($sql);
 			$result = $query->execute([
 				'name'     => $userName,
 				'email'    => $userEmail,
+				'city'     => $userCity,
 				'password' => $userPassword,
 				'about'    => $aboutUser,
 			]);

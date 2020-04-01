@@ -18,14 +18,13 @@
 		public function checkParams()
 		{
 			$result = [];
-			extract($_POST); //Распаковываем для удобства
+			extract($this->data); //Распаковываем для удобства
 
-			if (!$password) {
-				$result['message'] =  ENTER_PASSWORD;
-			}
-
-			if (!$email) {
-				$result['message'] =  ENTER_EMAIL;
+			//Проходит по полям, если поле не заполнено, то вызывает соответствующую константу
+			foreach(array_reverse($this->data) as $key => $value) {
+				if (!$value) {
+					$result['message'] = constant('ENTER_'.strtoupper($key));
+				}
 			}
 
 			//Если возникла какая-то проблема, значит не все данные заполнены.
