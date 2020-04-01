@@ -30,3 +30,4 @@
 	define(YOUR_PROFILE, 'Your profile');
 	define(NOT_EMAIL, 'Invalid Email. Email usually contains the @ character');
 	define(IMAGE_UPLOAD, 'Upload photo');
+	define(FILE_MAX_SIZE, 'Max size 8mb');

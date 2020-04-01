@@ -90,4 +90,24 @@
 
 			return $userData;
 		}
+
+
+		/**
+		* Загружает название фото в базу данных
+		* @param string $filename
+		* @param int $userId
+		* @return boolean
+		*/
+		public function uploadImage($filename, $userId)
+		{
+			$sql = 'UPDATE users SET image = :image WHERE id = :id';
+			$query = $this->db->prepare($sql);
+			$result = $query->execute([
+				'image'    => $filename,
+				'id' => $userId,
+			]);
+
+			return $result;
+		}
+
 	}

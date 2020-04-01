@@ -14,10 +14,9 @@
 						<span> <?=CITY_PLACEHOLDER.': '.$_SESSION['userData']['city']?> </span>				
 					</div>
 				</div>
-				<form action="/register/upload" enctype= 'multipart/form-data'>
-					<input type="hidden" name="MAX_FILE_SIZE" value="30000">
+				<form action="/register/upload" method='POST' enctype="multipart/form-data">
 					<input type="file" name='image'> <br>
-					<button type='submit'> <?=IMAGE_UPLOAD?> </button>
+					<button type='submit'> <?=IMAGE_UPLOAD?> </button> <span> (<?=FILE_MAX_SIZE?>) </span>
 				</form>
 				<br>					
 				<p class="aboutme"> <?=$_SESSION['userData']['about']?> </p>

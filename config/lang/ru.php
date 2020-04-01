@@ -30,3 +30,4 @@
 	define(YOUR_PROFILE, 'Ваш профиль');
 	define(NOT_EMAIL, 'Некорректный Email. Обычно email содержит символ @');
 	define(IMAGE_UPLOAD, 'Загрузить фото');
+	define(FILE_MAX_SIZE, 'Макс. размер 8мб');

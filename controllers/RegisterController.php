@@ -78,6 +78,30 @@
 		*/
 		public function uploadAction()
 		{
-			
+			$uploadDir = 'images/avatars/';
+			$uploadFile = $uploadDir.basename($_FILES['image']['name']);
+
+			$fileExt = explode('.', $uploadFile)[1];
+			$extensions = ['png', 'jpg', 'gif', 'JPG', 'PNG'];
+
+			//Если это фотография, то копирем фото на сервер.
+			if (in_array($fileExt, $extensions)){
+				copy($_FILES['image']['tmp_name'], $uploadFile);
+
+				//Генерируем новое уникальное имя.
+				$newName = uniqid().'.'.$fileExt;
+				$newPath = $uploadDir.$newName;
+				rename($uploadFile, $newPath);
+
+				//Загружаем название фото в базу данных.
+				$model = new UsersModel;
+				if ($model->uploadImage($newName, $_SESSION['userData']['id'])) {
+					$_SESSION['userData']['image'] = $newName;
+					redirect('/user');
+				} else {
+					echo "Ошибка при загрузке файла";
+				}
+			}
 		}
+
 	}
