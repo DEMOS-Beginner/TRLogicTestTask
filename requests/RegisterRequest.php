@@ -27,6 +27,10 @@
 				$result['message'] =  PASSWORD_MISMATCH;				
 			}
 
+			if (! preg_match('/@/', $email)) {
+				$result['message'] =  NOT_EMAIL;	
+			}
+
 			//Проходит по полям, если поле не заполнено, то вызывает соответствующую константу
 			foreach(array_reverse($this->data) as $key => $value) {
 				if (!$value) {

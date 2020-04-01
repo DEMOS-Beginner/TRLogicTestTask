@@ -15,5 +15,10 @@
 			<span> <?=LANG?> </span>
 			<a href='#' onclick="setLang('<?=$_SESSION['lang']?>');"> <?=$_SESSION['lang']?> </a>
 		</div>
+		<?php if (isset($_SESSION['userData'])): ?>
+			<div class="logout_block">
+				<a href='#' onclick="logout();"> <?=LOGOUT?> </a>			
+			</div>
+		<?php endif; ?>	
 	</div>
 

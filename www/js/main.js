@@ -17,6 +17,7 @@ function getData(obj_form)
     return hData;
 }
 
+
 /**
 * Посылает AJAX запрос в RegisterController для регистрации пользователя
 */
@@ -40,6 +41,7 @@ function register()
 		}
 	});
 }
+
 
 /**
 * Посылает AJAX запрос в AuthController для авторизации пользователя
@@ -66,12 +68,29 @@ function login()
 }
 
 /**
+* Посылает AJAX-запрос на выход из аккаунта
+*/
+function logout()
+{
+	$.ajax({
+		type: 'POST',
+		dataType: 'json',
+		url: '/user/logout',
+		async: true,
+		success: function(data) {
+			location.href = '/';
+		}
+	});	
+}
+
+/**
 * Скрывает сообщение с id = blockId
 */
 function closeMessage(blockId)
 {
 	$(blockId).hide();
 }
+
 
 /**
 * Устанавливает указанный язык

@@ -16,8 +16,9 @@
 	require_once '../components/Router.php';
 	require_once '../config/db.php';
 	require_once '../config/config.php';
-	require_once '../library/mainFunctions.php';
+	require_once '../config/constants.php';
 	require_once "../config/lang/{$_SESSION['lang']}.php";
+	require_once '../library/mainFunctions.php';
 
 	//К этому моменту строка типа 'index/index' уже преобразована с помощью .htaccess
 	//Получаем имя контроллера и определяем его метод.

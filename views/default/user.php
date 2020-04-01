@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-6 profile">
 				<div class="base_info">
-					<img class='avatar' src='/images/avatars/<?=$_SESSION['userData']['image']?>' width='150'>
+					<img class='avatar' src='<?=FILE_UPLOAD_PATH.$_SESSION['userData']['image']?>' width='150'>
 					<div class="info">
 						<h2> <?=$_SESSION['userData']['name']?> </h2>
 						<span> <?=EMAIL_PLACEHOLDER.': '.$_SESSION['userData']['email']?> </span> <br>

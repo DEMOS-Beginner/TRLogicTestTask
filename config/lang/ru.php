@@ -8,6 +8,7 @@
 
 	define(HOME, 'Главная');
 	define(LANG, 'Язык: ');
+	define(LOGOUT, 'Выйти');
 	define(WELCOME, 'Добро пожаловать!');
 	define(SIGN_IN, 'Войти на сайт');
 	define(SIGN_UP, 'Зарегистрироваться');

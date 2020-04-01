@@ -8,6 +8,7 @@
 
 	define(HOME, 'Home');
 	define(LANG, 'Language: ');
+	define(LOGOUT, 'Logout');
 	define(WELCOME, 'Welcome!');
 	define(SIGN_IN, 'Sign in');
 	define(SIGN_UP, 'Sign up');

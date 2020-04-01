@@ -38,6 +38,12 @@
 	color: white;
 }
 
+.logout_block {
+	position: absolute;
+	right: 5%;
+	top: 30%;	
+}
+
 .home {
 	font-family: Roboto;
 	font-size: 32px;
@@ -75,6 +81,10 @@
 .base_info {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
+}
+
+.aboutme {
+	word-wrap: break-word;
 }
 
 .avatar {

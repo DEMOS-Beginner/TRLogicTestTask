@@ -45,20 +45,24 @@
 				return;
 			}
 
+			//Фильтруем данные полей, хешируем пароль
 			$resData = [];
 			$userEmail = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
 			$userPassword = md5($_POST['password']);
 
+			//Осуществляем логин
 			$model = new UsersModel;
 			$userData = $model->loginUser($userEmail, $userPassword);
 			if ($userData) {
 				$_SESSION['userData'] = $userData;
 				$resData['success'] = 1;
 				echo json_encode($resData);
+				return;
 			} else {
 				$resData['success'] = 0;
 				$resData['message'] = 'Неверно введен email или пароль';
 				echo json_encode($resData);				
+				return;
 			}
 		}
 

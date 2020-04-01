@@ -78,19 +78,17 @@
 		*/
 		public function uploadAction()
 		{
-			$uploadDir = 'images/avatars/';
-			$uploadFile = $uploadDir.basename($_FILES['image']['name']);
+			$uploadFile = FILE_UPLOAD_PATH.basename($_FILES['image']['name']);
 
 			$fileExt = explode('.', $uploadFile)[1];
-			$extensions = ['png', 'jpg', 'gif', 'JPG', 'PNG'];
 
 			//Если это фотография, то копирем фото на сервер.
-			if (in_array($fileExt, $extensions)){
+			if (in_array($fileExt, FILE_EXTENSIONS)){
 				copy($_FILES['image']['tmp_name'], $uploadFile);
 
 				//Генерируем новое уникальное имя.
 				$newName = uniqid().'.'.$fileExt;
-				$newPath = $uploadDir.$newName;
+				$newPath = FILE_UPLOAD_PATH.$newName;
 				rename($uploadFile, $newPath);
 
 				//Загружаем название фото в базу данных.
@@ -102,6 +100,7 @@
 					echo "Ошибка при загрузке файла";
 				}
 			}
+			echo "Файлы с таким расширением не поддерживаются";
 		}
 
 	}
