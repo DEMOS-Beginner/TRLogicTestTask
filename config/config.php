@@ -17,3 +17,7 @@
 	//Константы для шаблонов
 	define(TEMPLATE_PATH_PREFIX, "../views/{$template}/"); //префикс для пути к шаблону
 	define(TEMPLATE_PATH_POSTFIX, '.php'); //тип файлов
+
+	//Константы для загружаемых изображений
+	define(FILE_UPLOAD_PATH, 'images/avatars/');
+	define(FILE_EXTENSIONS, ['png', 'jpg', 'gif', 'JPG', 'PNG']);
