@@ -60,7 +60,7 @@
 				return;
 			} else {
 				$resData['success'] = 0;
-				$resData['message'] = 'Неверно введен email или пароль';
+				$resData['message'] = INVALID_EMAIL_OR_PASSWORD;
 				echo json_encode($resData);				
 				return;
 			}

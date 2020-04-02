@@ -33,3 +33,4 @@
 	define(IMAGE_UPLOAD, 'Upload photo');
 	define(FILE_MAX_SIZE, 'Max size 8mb');
 	define(EMAIL_REPEATED, 'User with this email already exists');	
+	define(INVALID_EMAIL_OR_PASSWORD, 'Invalid password or email');

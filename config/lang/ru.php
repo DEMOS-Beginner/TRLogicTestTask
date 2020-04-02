@@ -33,3 +33,4 @@
 	define(IMAGE_UPLOAD, 'Загрузить фото');
 	define(FILE_MAX_SIZE, 'Макс. размер 8мб');
 	define(EMAIL_REPEATED, 'Пользователь с таким email уже существует');
+	define(INVALID_EMAIL_OR_PASSWORD, 'Неверный пароль или email');	
