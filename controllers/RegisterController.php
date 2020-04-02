@@ -57,7 +57,7 @@
 			$model = new UsersModel;
 			if ($model->checkUserEmail($userEmail)) {
 				$resData['success'] = 0;
-				$resData['message'] = 'Пользователь с таким email уже существует';
+				$resData['message'] = EMAIL_REPEATED;
 				echo json_encode($resData);
 				return;
 			}

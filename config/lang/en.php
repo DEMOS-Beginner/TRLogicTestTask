@@ -32,3 +32,4 @@
 	define(NOT_EMAIL, 'Invalid Email. Email usually contains the @ character');
 	define(IMAGE_UPLOAD, 'Upload photo');
 	define(FILE_MAX_SIZE, 'Max size 8mb');
+	define(EMAIL_REPEATED, 'User with this email already exists');	

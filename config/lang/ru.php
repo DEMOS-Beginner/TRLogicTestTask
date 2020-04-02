@@ -32,3 +32,4 @@
 	define(NOT_EMAIL, 'Некорректный Email. Обычно email содержит символ @');
 	define(IMAGE_UPLOAD, 'Загрузить фото');
 	define(FILE_MAX_SIZE, 'Макс. размер 8мб');
+	define(EMAIL_REPEATED, 'Пользователь с таким email уже существует');
